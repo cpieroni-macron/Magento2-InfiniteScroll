@@ -53,6 +53,7 @@ define([
                         offset: window.iasConfig.trigger.offset
                     }
                 };
+
                 // check for custom configurations:
                 if (window.iasConfigCustom){
                     $.extend(config, window.iasConfigCustom);
@@ -71,6 +72,7 @@ define([
                 if(window.iasConfig.memoryActive){
                     SgyIAS._log({extension: 'history'});
                     window.ias.extension(new IASHistoryExtension(config.history));
+                    history.scrollRestoration = 'manual';
                 }
                 // debug events
                 window.ias.on('scroll', function(scrollOffset, scrollThreshold){
